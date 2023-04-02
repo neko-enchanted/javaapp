@@ -1,0 +1,26 @@
+// place holder
+%tran-normal {
+  transition: all .3s;
+}
+
+// media query
+$sp-or-less: 767px;
+$pc-or-more: 1200px;
+$breakpoints: (
+  sp: "screen and (max-width: #{$sp-or-less})",
+  tb: "screen and (min-width: #{$sp-or-less + 1}) and (max-width: #{$pc-or-more - 1px})",
+  pc: "screen and (min-width: #{$pc-or-more})",
+);
+
+@mixin mq($breakpoint: sp) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+// utility
+@include mq(pc) {
+  .is-pc {
+    display: none;
+  }
+}
