@@ -1,7 +1,7 @@
-#### 概要
-JavaフレームワークStruts1.3において&lt;logic:iterate&gt;タグを利用しての入力フォームの動的な作成のデモ
-<br>
-#### フォルダ構成
+### 概要
+JavaフレームワークStruts1.3において<logic:iterate>タグを利用しての入力フォームの動的な作成のデモ
+
+### フォルダ構成
 .
 ├── WebContent
 │   ├── META-INF
