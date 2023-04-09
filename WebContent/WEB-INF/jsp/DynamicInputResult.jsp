@@ -18,7 +18,7 @@
 		<br>
 		<br>
 		
-		<h3>入力データの出力</h3>
+		<h3>Input data output</h3>
 		<logic:iterate name="resultForm" property="someList" id="sObject">
 			<bean:write name="sObject" property="id" />: 
 			<bean:write name="sObject" property="name" />

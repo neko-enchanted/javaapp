@@ -8,10 +8,10 @@
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic"%>
 <%
-// 表示用データの生成
+// Generation of data for display
 String[] strArr = { "apple", "banana", "kiwi", "lemon", "melon" };
 
-// 上記データを使ってのリストの生成
+// Generate listings using the above data
 List<SomeObject> tmpList = new ArrayList<>();
 for (int i = 0; i < strArr.length; i++) {
   SomeObject sObject = new SomeObject();
@@ -21,11 +21,11 @@ for (int i = 0; i < strArr.length; i++) {
   tmpList.add(sObject);
 }
 
-// 生成したリストをアクションフォームに設定
+// Set the generated list in the action form
 SomeForm sForm = new SomeForm();
 sForm.someList = tmpList;
 
-// リクエストスコープに保存
+// Save to Request Scope
 request.setAttribute("sForm", sForm);
 %>
 <!DOCTYPE html>
@@ -42,7 +42,7 @@ request.setAttribute("sForm", sForm);
 		<br>
 		<br>
 
-		<h3>コレクションの出力</h3>
+		<h3>Collection Output</h3>
 		<logic:iterate name="sForm" property="someList" id="sObject">
 			<bean:write name="sObject" property="id" />: 
 			<bean:write name="sObject" property="name" />
@@ -51,7 +51,7 @@ request.setAttribute("sForm", sForm);
 		<br>
 		<br>
 
-		<h3>入力フォーム</h3>
+		<h3>Input Form</h3>
 		<html:form action="/DynamicInput">
 
 			<logic:iterate name="sForm" property="someList" id="data"
@@ -61,7 +61,7 @@ request.setAttribute("sForm", sForm);
 				</div>
 			</logic:iterate>
 
-			<html:submit value="送信" />
+			<html:submit value="Submit" />
 		</html:form>
 	</div>
 

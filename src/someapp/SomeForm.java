@@ -10,7 +10,7 @@ import org.apache.struts.action.ActionMapping;
 public class SomeForm extends ActionForm {
   public List someList;
   
-  // getter1
+  // getter
   public List getSomeList() {
     return someList;
   }
@@ -21,7 +21,7 @@ public class SomeForm extends ActionForm {
     this.someList = userInputs;
   }
 
-  // getter2
+  // Creating and passing empty objects
   public SomeObject getData(int index) {
     while(someList.size() <= index) {
       this.someList.add(new SomeObject());

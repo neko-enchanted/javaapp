@@ -30,18 +30,18 @@ public class SomeAction extends Action {
     str += "_test";
     someList.get(0).setName(str);
 
-    //  リクエストスコープにアクションフォームをセット
+    // Set action form in request scope
     request.setAttribute("resultForm", resultForm);
     
-    // 結果画面動作確認用
+    // For checking the operation of the result scree
     // request.setAttribute("resultForm", generateDummyData());
 
     return mapping.findForward("DynamicInputResult");
   }
   
-  // 結果画面動作確認用ダミーデータ生成メソッド
+  // Dummy data generation method for checking result screen
   public SomeForm generateDummyData() {
-    String[] strArr = { "林檎", "バナナ", "キウィ", "檸檬", "メロン" };
+    String[] strArr = { "grape", "pineapple", "dragonfruit", "watermelon", "strawberry" };
     List<SomeObject> tmpList = new ArrayList<>();
     for (int i = 0; i < strArr.length; i++) {
       SomeObject sObject = new SomeObject();
